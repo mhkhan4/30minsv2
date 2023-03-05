@@ -1,0 +1,24 @@
+<div class="front-page">
+    <div class="card">
+        <div class="table-responsive">
+            <table class="table" *ngIf="exercises.length">
+                <thead>
+                    <tr>
+                        <th>Exercise Name</th>
+                        <th>Average Daily Reps</th>
+                        <th>Personal Best Reps</th>
+                        <th>Weekly Frequency</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let exercise of exercises">
+                        <td>{{ exercise.name }}</td>
+                        <td>{{ exercise.avgDailyRep }}</td>
+                        <td>{{ exercise.bestDayReps }}</td>
+                        <td>{{ exercise.weeklyFreq }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
