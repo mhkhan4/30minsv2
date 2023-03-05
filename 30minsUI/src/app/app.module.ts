@@ -6,7 +6,9 @@ import { AppComponent } from './app.component';
 import { ExerciseFormComponent } from './exercise/exercise-form/exercise-form.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http'
       { path: '**', redirectTo: 'exercise', pathMatch: 'full' } //any other path instead of giving 404 we are redirecting
     ]),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

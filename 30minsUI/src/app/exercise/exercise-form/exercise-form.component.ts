@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { PopupComponent } from 'src/app/shared/popup/popup.component';
 import { IExercise } from '../exercise';
 import { ExerciseService } from '../exercise.service';
 
@@ -8,13 +10,21 @@ import { ExerciseService } from '../exercise.service';
 })
 export class ExerciseFormComponent implements OnInit{
   exercises: IExercise[] = [];
-    errorMessage: String = "";
 
-    constructor(private exerciseService: ExerciseService) {}
-    ngOnInit(): void {
-        this.exerciseService.getExercises().subscribe({
-            next: exercises => this.exercises = exercises,
-            error: err => this.errorMessage = err
-        });
-    }
+  constructor(private dialogRef: MatDialog) {}
+
+  openDialog(){
+    this.dialogRef.open(PopupComponent);
+  }
+
+  ngOnInit(): void {
+    
+  }
+
+  addExercise(): void{
+    //
+  }
+
+
+
 }
